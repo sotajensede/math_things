@@ -11,6 +11,7 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 void main(int argc, char *argv[])
 {
@@ -21,7 +22,8 @@ void main(int argc, char *argv[])
         int args[argc - 1], lcm, x;
 
         /* set lcm and first int to first argument */
-        args[0] = lcm = (int)(argv[1][0] - '0');
+        //args[0] = lcm = (int)(argv[1][0] - '0');
+        args[0] = lcm = atoi(argv[1]);
 
         /* add rest of arguments to int array
            set lcm to highest argument */
