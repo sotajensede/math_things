@@ -25,12 +25,23 @@ void main(int argc, char *argv[])
         //args[0] = lcm = (int)(argv[1][0] - '0');
         args[0] = lcm = atoi(argv[1]);
 
+        /* TEST 
+        printf("args[0]: %d\nlcm: %d\nargv[1] %d\n\n", args[0], lcm, atoi(argv[1]));
+        */
+
         /* add rest of arguments to int array
            set lcm to highest argument */
         for(int i = 2; i < argc; ++i) {
-            args[i-1] = (int)(argv[i][0] - '0');
+            //args[i-1] = (int)(argv[i][0] - '0');
+            args[i-1] = atoi(argv[i]);
             if(args[i-1] > lcm) lcm = args[i-1];
         }
+        
+        /* TEST 
+        printf("Operands:\n");
+        for(int i = 0; i < argc - 1; ++i)
+            printf(" %d\n", args[i]);
+        printf("\nLCM:");*/
 
         x = 1; /* multiply by x until lcm is found*/
         for(int i = 0; i < argc - 1;) {
