@@ -17,20 +17,20 @@ void main(int argc, char *argv[])
     if(argc < 2)
         printf("Usage: %s [NUMBERS]\n", argv[0]);
     else {
-        /* int args, potential solution, lcm multiple */
+        /* int args, potential solution, lcm multiplier */
         int args[argc - 1], lcm, x;
 
-        /* set lcd and first int to first argument */
+        /* set lcm and first int to first argument */
         args[0] = lcm = (int)(argv[1][0] - '0');
 
         /* add rest of arguments to int array
-           set lcd to highest argument */
+           set lcm to highest argument */
         for(int i = 2; i < argc; ++i) {
             args[i-1] = (int)(argv[i][0] - '0');
             if(args[i-1] > lcm) lcm = args[i-1];
         }
 
-        x = 1; /* multiply by x until lcd is found*/
+        x = 1; /* multiply by x until lcm is found*/
         for(int i = 0; i < argc - 1;) {
             if((lcm * x) % args[i] == 0) ++i;
             else { ++x; i = 0;}
