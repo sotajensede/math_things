@@ -15,25 +15,26 @@
 
 void main(int argc, char *argv[])
 {
-    if(argc < 2)
+    if(argc < 2){
         printf("Usage: %s [NUMBERS]\n", argv[0]);
-    else {
-        int args[argc - 1], lcm, x;
-
-        args[0] = lcm = atoi(argv[1]);
-
-        for(int i = 2; i < argc; ++i) {
-            args[i-1] = atoi(argv[i]);
-            if(args[i-1] > lcm) lcm = args[i-1];
-        }
-
-        x = 1;
-        for(int i = 0; i < argc - 1;) {
-            if((lcm * x) % args[i] == 0) ++i;
-            else { ++x; i = 0;}
-        }
-
-        lcm = lcm * x;
-        printf("%d\n", lcm);
+        return EXIT_FAILURE;
     }
+
+    int args[argc - 1], lcm, x;
+
+    args[0] = lcm = atoi(argv[1]);
+
+    for(int i = 2; i < argc; ++i) {
+        args[i-1] = atoi(argv[i]);
+        if(args[i-1] > lcm) lcm = args[i-1];
+    }
+
+    x = 1;
+    for(int i = 0; i < argc - 1;) {
+        if((lcm * x) % args[i] == 0) ++i;
+        else { ++x; i = 0;}
+    }
+
+    lcm = lcm * x;
+    printf("%d\n", lcm);
 }

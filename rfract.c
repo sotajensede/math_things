@@ -1,11 +1,22 @@
+/*
+ *
+ * Jesse Deaton
+ *
+ * Be free of petty math problems:
+ * use this to reduce fractions.
+ *
+ * September, 2015
+ *
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 
 int main(int argc, char *argv[])
 {
     if(argc < 3){
-        printf("Usage: r_fract [numerator] [denominator]\n");
-        return(EXIT_FAILURE);
+        printf("Usage: %s [numerator] [denominator]\n", argv[0]);
+        return EXIT_FAILURE;
     }
     
     int num = atoi(argv[1]);
