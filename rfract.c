@@ -22,15 +22,14 @@ int main(int argc, char *argv[])
     int num = atoi(argv[1]);
     int denom = atoi(argv[2]);
 
-    for(int i = 2; i <= num; i++){
+    for(int i = 2; i <= num; i++)
         if(num % i == 0 && denom % i == 0){
             num = num / i;
             denom = denom / i;
             i = 2;
         }
-    }
 
-    printf("%d/%d\n", num, denom);
+    printf(" %d\n---\n %d\n", num, denom);
 
     return 0;
 }
